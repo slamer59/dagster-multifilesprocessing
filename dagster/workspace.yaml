@@ -1,0 +1,4 @@
+load_from:
+  - python_file: pipelines/pdf2docx_pipeline.py
+  - python_file: pipelines/doc2docx_pipeline.py
+    

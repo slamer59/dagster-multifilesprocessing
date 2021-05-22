@@ -1,0 +1,10 @@
+- black
+- isort
+- python-docx
+- pdf2docx
+- dagit
+- dagster
+- pip
+- pip:
+  - docx2json
+  - pdf2docx
