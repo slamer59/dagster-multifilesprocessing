@@ -3,14 +3,13 @@ from docx.shared import Inches
 from pathlib import Path
 from dagster import pipeline, solid, AssetMaterialization, Output, EventMetadata
 import json
-from docx2json import convert
-from . path_def import *
+from pathdef import *
 
 
-
-@solid
+# https://docs.dagster.io/concepts/partitions-schedules-sensors/sensors
+@solid(config_schema={"filename": str})
 def load_document(_context):
-    name = "B-9-2021-0130_FR.docx"
+    name = _context.solid_config["filename"]
     doc = Document(external_data / name)
     return {"name": name, "paragraphs": [p.text for p in doc.paragraphs]} #, "serial":doc.__dict__}
 
