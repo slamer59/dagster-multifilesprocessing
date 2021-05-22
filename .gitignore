@@ -87,3 +87,8 @@ target/
 
 # Mypy cache
 .mypy_cache/
+.logs_queue
+history
+storage
+schedules
+logs
